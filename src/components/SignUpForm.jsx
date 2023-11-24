@@ -1,6 +1,7 @@
 import { useFormik } from "formik";
 import "../styles/sign-up-form.css";
 import { useEffect } from "react";
+import { signUpValidation } from "./signUpValidation";
 const initialValues = {
   name: "",
   email: "",
@@ -8,8 +9,9 @@ const initialValues = {
   confirmPassword: "",
 };
 function SignUpForm() {
-  const { values, handleSubmit, handleBlur, handleChange } = useFormik({
+  const { values, handleSubmit, handleBlur, handleChange, errors } = useFormik({
     initialValues,
+    validationSchema: signUpValidation,
     onSubmit: (values) => {
       console.log(values);
     },
@@ -30,6 +32,7 @@ function SignUpForm() {
           onChange={handleChange}
           onBlur={handleBlur}
         />
+        {errors.name && <small className="error-text">{errors.name}</small>}
       </div>
 
       <div className="form-group">

@@ -73,3 +73,6 @@ button:focus-visible {
 .app-wrapper h3 {
   text-align: center;
 }
+.error-text {
+  color: rgb(254, 16, 16);
+}
