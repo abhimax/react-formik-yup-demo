@@ -1,20 +1,59 @@
+import { useFormik } from "formik";
 import "../styles/sign-up-form.css";
+import { useEffect } from "react";
+const initialValues = {
+  name: "",
+  email: "",
+  password: "",
+  confirmPassword: "",
+};
 function SignUpForm() {
+  const { values, handleSubmit, handleBlur, handleChange } = useFormik({
+    initialValues,
+    onSubmit: (values) => {
+      console.log(values);
+    },
+  });
+  useEffect(() => {
+    console.log(values);
+  }, [values]);
+
   return (
-    <form className="sign-up-form">
+    <form className="sign-up-form" onSubmit={handleSubmit}>
       <div className="form-group">
         <label htmlFor="name">Name:</label>
-        <input type="text" id="name" name="name" required />
+        <input
+          type="text"
+          id="name"
+          name="name"
+          value={values.name}
+          onChange={handleChange}
+          onBlur={handleBlur}
+        />
       </div>
 
       <div className="form-group">
         <label htmlFor="email">Email:</label>
-        <input type="email" id="email" name="email" required />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          value={values.email}
+          onChange={handleChange}
+          onBlur={handleBlur}
+        />
       </div>
 
       <div className="form-group">
         <label htmlFor="password">Password:</label>
-        <input type="password" id="password" name="password" required />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          value={values.password}
+          onChange={handleChange}
+          onBlur={handleBlur}
+        />
       </div>
 
       <div className="form-group">
@@ -23,7 +62,9 @@ function SignUpForm() {
           type="password"
           id="confirmPassword"
           name="confirmPassword"
-          required
+          value={values.confirmPassword}
+          onChange={handleChange}
+          onBlur={handleBlur}
         />
       </div>
 
