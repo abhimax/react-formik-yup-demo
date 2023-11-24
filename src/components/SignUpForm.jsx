@@ -45,6 +45,7 @@ function SignUpForm() {
           onChange={handleChange}
           onBlur={handleBlur}
         />
+        {errors.email && <small className="error-text">{errors.email}</small>}
       </div>
 
       <div className="form-group">
@@ -57,6 +58,9 @@ function SignUpForm() {
           onChange={handleChange}
           onBlur={handleBlur}
         />
+        {errors.password && (
+          <small className="error-text">{errors.password}</small>
+        )}
       </div>
 
       <div className="form-group">
@@ -69,6 +73,9 @@ function SignUpForm() {
           onChange={handleChange}
           onBlur={handleBlur}
         />
+        {errors.confirmPassword && (
+          <small className="error-text">{errors.confirmPassword}</small>
+        )}
       </div>
 
       <button type="submit">Submit</button>

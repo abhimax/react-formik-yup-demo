@@ -5,14 +5,14 @@ export const signUpValidation = Yup.object({
   email: Yup.string()
     .email("Please enter a valid email")
     .required("Please enter email"),
-  password: Yup.string().matches(RegExp, "^(?=.*[0-9])[wW]{3,}$"),
+  password: Yup.string()
+    .matches(
+      /^(?=.*[0-9])\w{3,}$/,
+      "Password must contain at least one digit and be at least 3 characters long"
+    )
+    .required("Please enter a password"),
   confirmPassword: Yup.string().oneOf(
     [Yup.ref("password")],
     "Password is not matched"
   ),
 });
-//password Reg Exp
-//^: Asserts the start of the string.
-//(?=.*[0-9]): Positive lookahead assertion ensuring that at least one digit (0-9) is present.
-//[\w\W]{3,}: Matches any character (word character \w or non-word character \W) for at least 3 times.
-//$: Asserts the end of the string.
