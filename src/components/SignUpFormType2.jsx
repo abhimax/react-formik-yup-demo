@@ -1,6 +1,5 @@
 import { useFormik } from "formik";
 import "../styles/sign-up-form.css";
-import { useEffect } from "react";
 import { signUpValidation } from "./signUpValidation";
 const initialValues = {
   name: "",
@@ -16,10 +15,6 @@ function SignUpFormType2() {
       console.log(values);
     },
   });
-  useEffect(() => {
-    console.log(values);
-  }, [values]);
-
   return (
     <form className="sign-up-form" onSubmit={handleSubmit}>
       <div className="form-group">
