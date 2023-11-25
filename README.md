@@ -1,4 +1,4 @@
-# React Formik Yep Demo
+# React Formik Yup Demo
 
 This is a straightforward React project created with Vite, showcasing form handling and field validation using Formik and Yup. In this demo, I've explored two methods to handle the same signup form.
 
