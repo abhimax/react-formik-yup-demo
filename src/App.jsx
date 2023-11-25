@@ -7,7 +7,7 @@ function App() {
       <h2>Formik and Yup Form Demo</h2>
       <h4>Method 01 : useFormik hook</h4>
       <SignUpForm />
-      <h4>Method 02 : Formik Form and Inputs</h4>
+      <h4>Method 02 : Formik, Form, Field</h4>
       <SignUpFormType2 />
     </div>
   );
