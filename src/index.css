@@ -70,7 +70,8 @@ button:focus-visible {
   flex-direction: column;
   width: 100vw;
 }
-.app-wrapper h3 {
+.app-wrapper h2,
+.app-wrapper h4 {
   text-align: center;
 }
 .error-text {
